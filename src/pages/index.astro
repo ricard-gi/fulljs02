@@ -1,5 +1,5 @@
 ---
-
+const allBicis = await Astro.glob("./bicis/*.md");
 ---
 
 <html lang="en">
@@ -11,6 +11,18 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>Bikes</h1>
+
+
+		<ul>
+			{
+				allBicis.map((bici) => (
+					<div>
+						<a href={bici.url}>{bici.frontmatter.title}</a>
+						<p>PREU {bici.frontmatter.price}</p>
+					</div>
+				))
+			}
+		</ul>
 	</body>
 </html>

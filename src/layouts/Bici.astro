@@ -1,0 +1,37 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<style>
+    .contenidor {
+        width: 700px;
+        border: 1px solid gray;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    img {
+        width: 100%;
+    }
+    .esquerra, .dreta {
+        width: 300px;
+        margin: 10px;
+        display: inline-block;
+    }
+    .dreta {
+        background-color: beige;
+        padding: 10px;
+    }
+</style>
+
+<a href="/" >back</a>
+
+<div class="contenidor">
+    <div class="esquerra">
+        <h1>{frontmatter.title}</h1>
+        <img src={frontmatter.image} />
+        <p>preu {frontmatter.price}</p>
+    </div>
+    <div class="dreta">
+        <slot />
+    </div>
+</div>
