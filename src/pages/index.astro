@@ -1,16 +1,28 @@
 ---
-
+import General from "../layouts/General.astro";
+import Llibre from "../components/Llibre.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style>
+	header h1 {
+		color: red;
+		border-bottom: 1px solid red;
+		padding-bottom: 20px;
+		margin-bottom: 40px;
+	}
+
+</style>
+
+<General>
+
+	<header>
+		<h1>Kokinos</h1>
+	</header>
+
+	<main>
+		<Llibre titol="Hipopotam" imatge="hippo.jpg" url="hippo" />
+		<Llibre titol="Gos" imatge="abracadabra.jpg" url="abracadabra" />
+		<Llibre titol="Nen" imatge="adormir.jpg" url="adormir" />
+	</main>
+
+</General>

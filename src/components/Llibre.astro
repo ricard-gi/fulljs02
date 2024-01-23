@@ -1,0 +1,25 @@
+---
+
+const {titol, imatge, url} = Astro.props;
+
+---
+
+<style>
+    article {
+        border: 1px solid blue;
+        padding: 10px;
+        display: inline-block;
+        margin: 20px;
+        width: 200px;
+    }
+    article img {
+        width: 100%;
+    }
+</style>
+
+<article>
+    <a href={'/llibres/'+url}>
+    <img src={'/img/'+imatge} alt={titol} />
+    </a>
+    <p>{titol}</p>
+</article>
