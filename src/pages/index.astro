@@ -1,28 +1,19 @@
 ---
+import General from '../layouts/General.astro';
+import Indexbici from '../components/Indexbici.astro';
 const allBicis = await Astro.glob("./bicis/*.md");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
+<General>
 		<h1>Bikes</h1>
 
 
 		<ul>
 			{
 				allBicis.map((bici) => (
-					<div>
-						<a href={bici.url}>{bici.frontmatter.title}</a>
-						<p>PREU {bici.frontmatter.price}</p>
-					</div>
+					<Indexbici url={bici.url} nom={bici.frontmatter.title} />
+					
 				))
 			}
 		</ul>
-	</body>
-</html>
+</General>

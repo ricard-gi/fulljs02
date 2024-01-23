@@ -1,0 +1,20 @@
+---
+const {url, nom} = Astro.props;
+
+---
+
+<style>
+a, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    margin: 20px;
+}
+    </style>
+<button>
+    <a href={url}>{nom}</a>
+</button>
+<br />
+

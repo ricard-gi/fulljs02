@@ -1,5 +1,7 @@
 ---
+import General from './General.astro';
 const { frontmatter } = Astro.props;
+
 ---
 
 <style>
@@ -23,15 +25,20 @@ const { frontmatter } = Astro.props;
     }
 </style>
 
-<a href="/" >back</a>
+<General>
 
-<div class="contenidor">
-    <div class="esquerra">
-        <h1>{frontmatter.title}</h1>
-        <img src={frontmatter.image} />
-        <p>preu {frontmatter.price}</p>
+    <a href="/" >back</a>
+
+    <div class="contenidor">
+        <div class="esquerra">
+            <h1>{frontmatter.title}</h1>
+            <img src={frontmatter.image} />
+            <p>preu {frontmatter.price}</p>
+        </div>
+        <div class="dreta">
+            <slot />
+        </div>
     </div>
-    <div class="dreta">
-        <slot />
-    </div>
-</div>
+    
+</General>
+
