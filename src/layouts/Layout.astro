@@ -1,0 +1,18 @@
+---
+const {titol} = Astro.props;
+---
+
+<html lang="ca">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{titol}</title>
+	</head>
+	<body>
+        <h1>{titol}</h1>
+        <hr />
+		<slot />
+	</body>
+</html>
