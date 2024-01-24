@@ -1,15 +1,16 @@
 ---
 const { post } = Astro.params
-const { coloret } = Astro.props
+const { coloret, titol } = Astro.props
 
 export async function getStaticPaths() {
   return [
-    { params: { post: 'test' },  props:{ coloret: "red"} },
-    { params: { post: 'test2' }, props:{ coloret: "green"} },
-    { params: { post: 'test3' }, props:{ coloret: "blue"} },
+    { params: { post: 'test' },  props:{ coloret: "red", titol:"color vermell"} },
+    { params: { post: 'test2' }, props:{ coloret: "green", titol: "color verd"} },
+    { params: { post: 'test3' }, props:{ coloret: "blue", titol: "color blau"} },
+    { params: { post: 'test4' }, props:{ coloret: "yellow", titol: "color groc"} },
   ]
 }
 ---
 
-
-  <h1 style={"color: "+coloret} >{post} </h1>
+<h3>{post}</h3>
+  <h1 style={"color: "+coloret} >{titol} </h1>
