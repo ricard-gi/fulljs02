@@ -1,5 +1,8 @@
 ---
 import General from "../layouts/General.astro";
+
+import dades from '../data/dades.json'
+
 import Indexbici from "../components/Indexbici.astro";
 const allBicis = await Astro.glob("./bicis/*.md");
 
@@ -7,6 +10,10 @@ const allBicis = await Astro.glob("./bicis/*.md");
 
 <General>
 	<h1>Bikes</h1>
+
+	<ul>
+		{dades.map(e => <li>{e.nom}</li>)}
+	</ul>
 
 	{
 		allBicis.map(bici => <Indexbici url={bici.url} nom={bici.frontmatter.title} />)
