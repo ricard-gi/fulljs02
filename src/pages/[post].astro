@@ -1,0 +1,15 @@
+---
+const { post } = Astro.params
+const { coloret } = Astro.props
+
+export async function getStaticPaths() {
+  return [
+    { params: { post: 'test' }, props:{ coloret: "red"} },
+    { params: { post: 'test2' }, props:{ coloret: "green"} },
+    { params: { post: 'test3' }, props:{ coloret: "blue"} },
+  ]
+}
+---
+
+
+  <h1 style={"color: "+coloret} >{post}</h1>
