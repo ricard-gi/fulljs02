@@ -1,10 +1,10 @@
 ---
-const {title, img} = Astro.props;
+const {title, img, price} = Astro.props;
 
 ---
 
-
-<div>
+<div class="border-red-500 border border-solid p-4 ">
     <img src={img} />
     <h1>{title}</h1>
+    <h3>{price}</h3>
 </div>
